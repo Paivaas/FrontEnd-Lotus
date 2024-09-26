@@ -21,14 +21,14 @@ export default function Register() {
     <div className="h-full w-1/3 max-xl:w-0 max-xl:hidden relative bottom-16">
 
       <div className="w-full h-1/3 flex items-start justify-start align-top">
-        <Image className="w-[500px] h-[500px] relative bottom-24 right-24" alt="Email Icon" src={CircleDegrade}></Image>
+        <Image className="w-[50vw] h-[50vh] relative bottom-24 right-24" alt="Email Icon" src={CircleDegrade}></Image>
       </div>
-      <div className="w-full h-1/3 flex items-center justify-end relative left-32 bottom-14">
+      <div className="w-full h-1/3 flex items-center justify-end relative left-48 bottom-14">
           <span className="w-[200px] h-[200px] animate-jump-in animate-infinite animate-duration-[6000ms] animate-alternate rounded-full relative bg-pink-3 opacity-40"></span>
           <Image className="w-[200px] h-[200px] rounded-full relative right-[200px]" alt="Email Icon" src={CircleDegrade}></Image>
       </div>
       <div className="w-full h-1/3 flex justify-start items-center">
-        <Image className="w-[450px] h-[450px] rounded-full relative left-8 bottom-8" alt="Email Icon" src={CircleDegrade}></Image>
+        <Image className="w-[45vw] h-[45vh] rounded-full relative right-6 bottom-12" alt="Email Icon" src={CircleDegrade}></Image>
       </div>
 
     </div>
@@ -46,11 +46,12 @@ export default function Register() {
           <h2 className="text-gray-3">Ja possui uma conta? <span className="hover:text-pink-3 cursor-pointer transition duration-150 ease-in-out">Clique aqui</span> </h2>
         </div>
 
-        {/* Campos para entrada de dados */}
-        <form className="flex flex-col gap-4 w-[40vw] font-ABeeZee max-xl:w-full max-sm:text-sm">
+        {/* Campos para entrada de valor */}
+
+        <form className="flex flex-col gap-4 w-[40vw] text-gray-4 text-xl font-ABeeZee max-xl:w-full max-sm:text-sm">
 
 
-          <div className="flex gap-4 w-full">
+          <div className="flex gap-4 w-full h-18">
              
             <div className="flex p-5 w-1/2 rounded-3xl border-[3px] bg-white gap-4">
               <input 
@@ -70,9 +71,9 @@ export default function Register() {
 
           </div>
 
-          <div className="flex p-4 rounded-3xl border-[3px] bg-white gap-4 max-sm:gap-2 max-sm:h-16">
+          <div className="flex p-4 rounded-3xl border-[3px] h-18 bg-white gap-4 max-sm:gap-2 max-sm:h-16 ">
 
-              <Image className="w-[5%] max-sm:w-[10%]" alt="Email Icon" src={EmailIcon}></Image>
+              <Image className="w-[4%] max-sm:w-[10%]" alt="Email Icon" src={EmailIcon}></Image>
               <input 
               type="email" 
               placeholder="Seu email" 
@@ -82,7 +83,7 @@ export default function Register() {
             </div>
 
             <div className="flex p-4 rounded-3xl border-[3px] bg-white gap-4 max-sm:gap-2 max-sm:h-16">
-              <Image className="w-[5%] max-sm:w-[10%]" alt="Key Icon" src={KeyIcon}></Image>
+              <Image className="w-[4%] max-sm:w-[10%]" alt="Key Icon" src={KeyIcon}></Image>
               <input 
               type="password" 
               placeholder="Sua Senha" 
@@ -103,7 +104,7 @@ export default function Register() {
 
           </div>
 
-          <button className="sw-1/3 transition duration-150 ease-in-out bg-gradient-to-r from-pink-3 to-orange-3 p-4 px-6 items-center justify-between rounded-full text-white flex hover:cursor-pointer hover:scale-95 max-sm:w-full max-sm:h-16 ">
+          <button className="sw-1/3 transition duration-150 ease-in-out bg-gradient-to-r from-pink-3 to-orange-3 p-4 px-6 items-center justify-between rounded-full text-white flex hover:cursor-pointer hover:scale-95 max-sm:w-full max-sm:h-16">
             
             <p className="text-xl">Próximo</p>
             <Image className="w-[10%] max-sm:w-[5vw] " alt="Arrow Icon" src={ArrowIcon}></Image>
@@ -112,6 +113,7 @@ export default function Register() {
           
         </div>
 
+        
       </div>
 
     </div>
