@@ -10,9 +10,20 @@ import CircleDegrade from "../../public/icons/utilities/circle-degrade-2.svg"
 
 
 // Import dos componentes
-import Toggle from "@/components/Toggle";
+import Toggle from "@/components/ToggleRegister";
 
 export default function Home() {
+
+  const handleToggle = () => {
+    setEnabled(!enabled);
+
+    // Exibir a mensagem no terminal se o toggle for ativado
+    if (!enabled) {
+      console.log("Toggle ativado!");
+    }else{
+        console.log("Toggle desativado!");
+    }
+  };
 
   const nextForm = () =>{
 
