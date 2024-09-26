@@ -12,29 +12,12 @@ import CircleDegrade from "../../public/icons/utilities/circle-degrade-2.svg"
 // Import dos componentes
 import Toggle from "@/components/ToggleRegister";
 
-export default function Home() {
-
-  const handleToggle = () => {
-    setEnabled(!enabled);
-
-    // Exibir a mensagem no terminal se o toggle for ativado
-    if (!enabled) {
-      console.log("Toggle ativado!");
-    }else{
-        console.log("Toggle desativado!");
-    }
-  };
-
-  const nextForm = () =>{
-
-    document.getElementById.className('bg-pink-2')
-
-  }
-
+export default function Register() {
   
   return (
     <div className="flex w-screen h-screen max-xl:p-16 max-sm:p-8 overflow-hidden">
       
+      {/* Bolinhas decorativas */}
     <div className="h-full w-1/3 max-xl:w-0 max-xl:hidden relative bottom-16">
 
       <div className="w-full h-1/3 flex items-start justify-start align-top">
@@ -50,10 +33,12 @@ export default function Home() {
 
     </div>
 
+      {/* Codigo da direita (icon, titulo, form e botao) */}
     <div className="h-full w-2/3 flex flex-col justify-center items-center gap-20 max-xl:w-full">
 
       <div className="flex flex-col gap-14">
         
+        {/* Header (icon e titulo) */}
         <div className="flex flex-col gap-4 pb-10">
           <Image className="w-[15%]" alt="Lotus Icon" src={LotusIcon}></Image>
 
@@ -109,6 +94,7 @@ export default function Home() {
 
         </form>
 
+        {/* Botao e Toggle Doula */}
         <div className="flex w-[40vw] gap-10 h-14 max-sm:w-full max-sm:gap-4 max-sm:items-end max-sm:flex-col max-lg:w-full">
 
           <div className="flex items-center p-4 w-2/3 rounded-full border-[3px] border-gray-1 bg-white gap-2 max-sm:w-full">
