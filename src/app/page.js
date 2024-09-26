@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Swal from 'sweetalert2';
 
-// import {  Modal,   ModalContent,   ModalHeader,   ModalBody,   ModalFooter} from "@nextui-org/react";
 
 // Import das imagens 
 import LotusIcon from "../../public/icons/utilities/lotus-icon.svg";
@@ -18,17 +18,39 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Alerts (invalidEmail, successLogin)
+  const invalidEmail = () => {
+    Swal.fire({
+      title: "Email ou senha incorretos",
+      icon: "error",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  };
+
+  const successLogin = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Bem vindo-a Lotus!",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  };
+
+
+  // Validacao e tratativas de erro
   const validacaoLogin = (e) => {
     e.preventDefault();
     setError(""); 
 
-    // Validacao e tratativas de erro
-
     if (email == "" || password == "" || !email.includes('@') || !email.includes('.com')) {
       console.log("Por favor, preencha todos os campos.");
+      invalidEmail()
       return;
+    }else{
+      console.log("Login realizado com sucesso");
+      successLogin()
     }
-    console.log("Login realizado com sucesso");
   };
   
   return (
@@ -43,7 +65,7 @@ export default function Home() {
             <Image className="w-[15%]" alt="Lotus Icon" src={LotusIcon}></Image>
 
             <h1 className="text-gray-3 text-5xl">Login Lótus</h1>
-            <h2 className="text-gray-3">Ainda não possui uma conta? <span className="hover:text-gray-2 cursor-pointer transition duration-150 ease-in-out">Clique aqui</span> </h2>
+            <h2 className="text-gray-3">Ainda não possui uma conta? <span className="hover:text-pink-2 cursor-pointer transition duration-150 ease-in-out">Clique aqui</span> </h2>
           </div>
 
           {/* Campos para entrada de valor */}
@@ -67,7 +89,7 @@ export default function Home() {
 
           </form>
 
-          <button onClick={validacaoLogin} className="animate-fade-up animate-duration-500 animate-delay-100 animate-ease-in-out animate-normal bg-gradient-to-r from-pink-3 to-orange-3 w-40 p-4 px-6 items-center justify-between rounded-full text-white flex hover:cursor-pointer hover:scale-95">
+          <button onClick={validacaoLogin} className="duration-300 bg-gradient-to-r from-pink-3 to-orange-3 w-40 p-4 px-6 items-center justify-between rounded-full text-white flex hover:cursor-pointer hover:scale-95">
             
             <p className="text-xl">Entrar</p>
             <Image className="w-[20%]" alt="Arrow Icon" src={ArrowIcon}></Image>
@@ -75,6 +97,7 @@ export default function Home() {
           </button>
 
         </div>
+
 
       </div>
 
