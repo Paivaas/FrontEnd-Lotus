@@ -4,13 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Swal from 'sweetalert2';
+// import { Router } from "next/router";
 
 
 // Import das imagens 
-import LotusIcon from "../../public/icons/utilities/lotus-icon.svg";
+import LotusIcon from "../../public/icons/utilities/lotus-icon.svg"
 import EmailIcon from "../../public/icons/profile-information/grey/email.svg"
 import KeyIcon from "../../public/icons/profile-information/grey/key.svg"
 import ArrowIcon from "../../public/icons/utilities/arrow-white.svg"
+import CircleDegrade from "../../public/icons/utilities/circle-degrade.svg"
 
 export default function Home() {
 
@@ -21,7 +23,7 @@ export default function Home() {
   // Alerts (invalidEmail, successLogin)
   const invalidEmail = () => {
     Swal.fire({
-      title: "Email ou senha incorretos",
+      title: "Preencha todos os campos corretamente",
       icon: "error",
       showConfirmButton: false,
       timer: 1500
@@ -37,25 +39,26 @@ export default function Home() {
     });
   };
 
-
-  // Validacao e tratativas de erro
   const validacaoLogin = (e) => {
     e.preventDefault();
     setError(""); 
+
+    // Validacao e tratativas de erro
 
     if (email == "" || password == "" || !email.includes('@') || !email.includes('.com')) {
       console.log("Por favor, preencha todos os campos.");
       invalidEmail()
       return;
-    }else{
-      console.log("Login realizado com sucesso");
-      successLogin()
     }
+    console.log("Login realizado com sucesso");
+    successLogin()
   };
+
+  
   
   return (
     
-    <div className="flex w-screen h-screen max-xl:p-16 max-sm:p-8">
+    <div className="flex w-screen h-screen max-xl:p-16 max-sm:p-8 overflow-hidden">
 
       <div className="h-full w-2/3 flex flex-col justify-center items-center gap-20 max-xl:w-full">
 
@@ -98,15 +101,21 @@ export default function Home() {
 
         </div>
 
-
       </div>
 
 
       <div className="h-full w-1/3 max-xl:w-0 max-xl:hidden">
 
-        <div className="w-full h-1/3 bg-red-degrade-1 flex align-top justify-end"></div>
-        <div className="w-full h-1/3 bg-red-degrade-2"></div>
-        <div className="w-full h-1/3 bg-red-degrade-3"></div>
+        <div className="w-full h-1/3 flex align-top justify-end">
+          <Image className="w-[500px] h-[500px] relative bottom-24 left-24" alt="Email Icon" src={CircleDegrade}></Image>
+        </div>
+        <div className="w-full h-1/3 flex items-center relative">
+            <span className="w-[250px] h-[250px] animate-jump-in animate-infinite animate-duration-[6000ms] animate-alternate rounded-full relative bg-pink-3 opacity-40 flex items-center justify-center"></span>
+            <Image className="w-[250px] h-[250px] rounded-full relative right-[250px]" alt="Email Icon" src={CircleDegrade}></Image>
+        </div>
+        <div className="w-full h-1/3 flex justify-end">
+          <Image className="w-[450px] h-[450px] rounded-full relative bottom-24 left-24" alt="Email Icon" src={CircleDegrade}></Image>
+        </div>
 
       </div>
       
